@@ -1,0 +1,27 @@
+<h3>We have below {{authors.length}} authors</h3>
+<ul>
+  <li *ngFor="let author of authors">
+    {{ author }}
+  </li>
+</ul>
+<table>
+  <tr>
+    <td [attr.colspan]="colSpan"></td>
+    <!--some html attributes do not have their corresponding counterpart as DOM properties and vice versa
+      to handle for this situation we need to add 'attr' before that property and add '.' and as shown in 
+      the above attribute for colspan here we prefix it with attr.colspan
+    -->
+  </tr>
+</table>
+<div (click)="onDivClick($event)">
+  <button class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]="isActive ? 'blue' : 'white'" [style.visibility]="isActive ? 'visible' : 'hidden'" (click)="onSave($event)">Connect</button>
+  <!--Base upon boolean property isActive in component class will be added or if already present 
+  it will be removed.
+  -->
+  <!--Here for event we need to pass '$event' as it is; $e does not work.-->
+  <br>
+  <input (keyup.enter)="onKeyUp()">
+  <!--Using keyup.enter we can filter the keyboard event only when enter key is pressed -->
+  <input [value]="email" (keyup.enter)="email= $event.target.value; onEmailInput()">
+  <input [(ngModel)]="email" (keyup.enter)="onEmailInput()">
+</div>
