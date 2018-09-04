@@ -1,4 +1,4 @@
-import {Pipe, PipeTransform} from '@angular/core';
+    import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
     name: 'customTitleCase'
@@ -8,7 +8,7 @@ export class CustomTitleCasePipe implements PipeTransform {
     transform(value:String) {
         if(value) {
 
-            value = value.replace(/\b(\w)\w*\b/g, function(v) {
+            value = value.replace(/\b(\w)/g, function(v) {
                 return v.toUpperCase();
             });
 
