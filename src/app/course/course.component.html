@@ -7,7 +7,7 @@
   {{ course.price | currency:'INR':true:'3.2-2'}} <br>
   {{ course.releaseDate | date:'shortDate'}} <br>
   {{ course.summary | summary:15}} <br>
-  <favourite> </favourite>
+  <favourite [isStarred]="post.isStarred" (change)="onFavouriteChange()"> </favourite>
   <input [(ngModel)]="title">
   <span>{{title | customTitleCase}}</span>
 </li>
