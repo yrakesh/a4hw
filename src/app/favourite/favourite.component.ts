@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FavouriteComponent implements OnInit {
 
-  @Input() isStarred = false;
+  @Input('is-Starred') isFavourite = false;
   
   constructor() { }
 
@@ -15,7 +15,7 @@ export class FavouriteComponent implements OnInit {
   }
 
   onStarClicked() {
-    this.isStarred = !this.isStarred; 
+    this.isFavourite = !this.isFavourite; 
   }
 
 }
