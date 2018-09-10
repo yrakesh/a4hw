@@ -23,8 +23,8 @@ export class CourseComponent implements OnInit {
   ngOnInit() {
   }
 
-  onFavouriteChange() {
-    console.log('Favourite changed');
+  onFavouriteChange(isSelected) {
+    console.log('Favourite changed:\t', isSelected);
   }
 
 }

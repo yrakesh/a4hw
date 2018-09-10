@@ -1,14 +1,14 @@
 <h2>{{title | titlecase | customTitleCase}}</h2>
-    <ul>
-<li *ngFor="let course of courses">
-  {{ course.title | lowercase | uppercase}} <br>
-  {{ course.student | number}} <br>
-  {{ course.rating | number:'3.2-2'}} <br>
-  {{ course.price | currency:'INR':true:'3.2-2'}} <br>
-  {{ course.releaseDate | date:'shortDate'}} <br>
-  {{ course.summary | summary:15}} <br>
-  <favourite [is-Starred]="post.isStarred" (change)="onFavouriteChange()"> </favourite>
-  <input [(ngModel)]="title">
-  <span>{{title | customTitleCase}}</span>
-</li>
+<ul>
+  <li *ngFor="let course of courses">
+    {{ course.title | lowercase | uppercase}} <br>
+    {{ course.student | number}} <br>
+    {{ course.rating | number:'3.2-2'}} <br>
+    {{ course.price | currency:'INR':true:'3.2-2'}} <br>
+    {{ course.releaseDate | date:'shortDate'}} <br>
+    {{ course.summary | summary:15}} <br>
+    <favourite [is-Starred]="post.isStarred" (change)="onFavouriteChange($event)"></favourite>
+    <input [(ngModel)]="title">
+    <span>{{title | customTitleCase}}</span>
+  </li>
 </ul>

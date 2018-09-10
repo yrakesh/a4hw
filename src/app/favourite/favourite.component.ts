@@ -17,7 +17,7 @@ export class FavouriteComponent implements OnInit {
 
   onStarClicked() {
     this.isFavourite = !this.isFavourite; 
-    this.change.emit();
+    this.change.emit(this.isFavourite);
   }
 
 }
