@@ -14,7 +14,7 @@ import { Component, OnInit, Input } from '@angular/core';
   `]
 })
 
-export class LikeComponent implements OnInit {
+export class LikeComponent {
   @Input('like-state') isLiked: boolean;
   @Input('like-count') likeCount: number;
 
