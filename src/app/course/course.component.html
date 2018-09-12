@@ -1,14 +1,21 @@
-<h2>{{title | titlecase | customTitleCase}}</h2>
-<ul>
-  <li *ngFor="let course of courses">
-    {{ course.title | lowercase | uppercase}} <br>
-    {{ course.student | number}} <br>
-    {{ course.rating | number:'3.2-2'}} <br>
-    {{ course.price | currency:'INR':true:'3.2-2'}} <br>
-    {{ course.releaseDate | date:'shortDate'}} <br>
-    {{ course.summary | summary:15}} <br>
-    <favourite [is-Starred]="post.isStarred" (change)="onFavouriteChange($event)"></favourite>
-    <input [(ngModel)]="title">
-    <span>{{title | customTitleCase}}</span>
-  </li>
-</ul>
+<div *ngIf="courses.length > 0; then coursesList else noCourses"></div>
+<ng-template #coursesList>
+  <h2>{{title | titlecase | customTitleCase}}</h2>
+  <ul>
+    <li *ngFor="let course of courses">
+      {{ course.title | lowercase | uppercase}} <br>
+      {{ course.student | number}} <br>
+      {{ course.rating | number:'3.2-2'}} <br>
+      {{ course.price | currency:'INR':true:'3.2-2'}} <br>
+      {{ course.releaseDate | date:'shortDate'}} <br>
+      {{ course.summary | summary:15}} <br>
+      <favourite [is-Starred]="post.isStarred" (change)="onFavouriteChange($event)"></favourite>
+      <input [(ngModel)]="title">
+      <span>{{title | customTitleCase}}</span>
+    </li>
+  </ul>
+
+</ng-template>
+<ng-template #noCourses>
+  No courses yet
+</ng-template>

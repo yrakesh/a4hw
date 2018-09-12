@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'app';
   tweet = {
     body: 'this is the tweet body',
-    isLiked: true,
-    likeCount: 4
+    isLiked: !true,
+    likeCount: 487
   }
 }

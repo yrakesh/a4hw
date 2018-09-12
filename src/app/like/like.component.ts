@@ -8,16 +8,18 @@ import { Component, OnInit, Input } from '@angular/core';
   .glyphicon-heart:hover {
     cursor: pointer;
   }
-  .isActive {
-    color:red;
+  .glyphicon-heart.isActive {
+    color:deeppink;
   }
   `]
 })
 
 export class LikeComponent implements OnInit {
   @Input('like-state') isLiked: boolean;
-  @Input('like-count') likeCount;
+  @Input('like-count') likeCount: number;
 
+  onInit() {
+  }
   onClicked($event) {
     this.isLiked = !this.isLiked;
     this.likeCount = this.likeCount + (this.isLiked ? 1 : -1);
