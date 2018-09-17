@@ -5,7 +5,7 @@ import { Directive, HostListener, ElementRef, Input } from '@angular/core';
 })
 export class InputFormatDirective {
 
-  @Input('format') format: string = 'lowercase';
+  @Input('appInputFormat') format: string = 'lowercase';
 
   constructor(private el: ElementRef) { }
 
