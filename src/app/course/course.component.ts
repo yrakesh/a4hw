@@ -6,21 +6,28 @@ import { CoursesService } from '../courses.service';
   templateUrl: './course.component.html',
   styleUrls: ['./course.component.css']
 })
-export class CourseComponent implements OnInit {
+export class CourseComponent {
 
   title   = "The List of the courses of the annual angular summit";
   courses;
   post;
+  service;
     
   constructor(service: CoursesService) {
-      this.courses = service.getCourses();
+      this.courses = [];
+      this.service = service;
       this.post = {
         title: 'Post Title',
         isStarred: true
       };
   }
 
-  ngOnInit() {
+  loadCourses() {
+    this.courses = this.service.getCourses(); 
+  }
+
+  trackCourse(index, course) {
+    return course ? course.title : undefined;
   }
 
   onFavouriteChange(isSelected) {
