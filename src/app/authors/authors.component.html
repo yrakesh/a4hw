@@ -20,7 +20,7 @@
   -->
   <!--Here for event we need to pass '$event' as it is; $e does not work.-->
   <br>
-  <input (keyup.enter)="onKeyUp()">
+  <input (keyup.enter)="onKeyUp()" appInputFormat [format]="'uppercase'">
   <!--Using keyup.enter we can filter the keyboard event only when enter key is pressed -->
   <input [value]="email" (keyup.enter)="email= $event.target.value; onEmailInput()">
   <input [(ngModel)]="email" (keyup.enter)="onEmailInput()">

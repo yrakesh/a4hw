@@ -14,6 +14,7 @@ import { FavouriteComponent } from './favourite/favourite.component';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
 import { NavComponent } from './nav/nav.component';
+import { InputFormatDirective } from './input-format.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NavComponent } from './nav/nav.component';
     CustomTitleCasePipe,
     PanelComponent,
     LikeComponent,
-    NavComponent
+    NavComponent,
+    InputFormatDirective
   ],
   imports: [
     BrowserModule,
