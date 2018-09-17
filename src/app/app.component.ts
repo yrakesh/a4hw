@@ -10,6 +10,7 @@ export class AppComponent {
   tweet = {
     body: 'this is the tweet body',
     isLiked: !true,
-    likeCount: 487
+    likeCount: 487,
+    creator: null 
   }
 }
