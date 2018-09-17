@@ -19,4 +19,10 @@
 <ng-template #noCourses>
   No courses yet
 </ng-template>
-<button (click)="loadCourses()">Load Courses</button>
+<button
+(click)="loadCourses()"
+[ngStyle]="{
+  'backgroundColor' : canSave ? 'blue' : 'gray',
+  'color'           : canSave ? 'white' : 'black'
+}"
+>Load Courses</button>

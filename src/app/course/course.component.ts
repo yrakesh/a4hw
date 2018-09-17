@@ -12,9 +12,11 @@ export class CourseComponent {
   courses;
   post;
   service;
+  canSave;
     
   constructor(service: CoursesService) {
       this.courses = [];
+      this.canSave = true;
       this.service = service;
       this.post = {
         title: 'Post Title',
@@ -24,6 +26,7 @@ export class CourseComponent {
 
   loadCourses() {
     this.courses = this.service.getCourses(); 
+    this.canSave = !this.canSave;
   }
 
   trackCourse(index, course) {
