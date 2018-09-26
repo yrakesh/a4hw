@@ -1,8 +1,15 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
+<div class="panel panel-default" [ngClass]="{
+      'closed': isClosed,
+      'open' : !isClosed
+    }">
+  <div class="panel-heading" (click)="onHeaderClicked($event)">
     <ng-content select=".title"></ng-content>
+    <span class="glyphicon" [ngClass]="{
+      'glyphicon-chevron-down': isClosed,
+      'glyphicon-chevron-up'  : !isClosed
+    }"></span>
   </div>
   <div class="panel-body">
-    <ng-content select=".content" [ngClass]="{ isClosed }"></ng-content>
+    <ng-content select=".content"></ng-content>
     </div>
 </div>

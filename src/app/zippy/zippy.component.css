@@ -1,0 +1,13 @@
+.panel {
+  margin-bottom: 0;
+}
+.glyphicon {
+  display: block;
+  float: right;
+}
+.closed .panel-heading {
+  background-color: white;
+}
+.closed .panel-body {
+  display: none;
+}

@@ -7,11 +7,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ZippyComponent implements OnInit {
 
-  isClosed: Boolean = false;
+  isClosed: Boolean = true;
  
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onHeaderClicked($event) {
+    this.isClosed = !this.isClosed;
   }
 
 }
